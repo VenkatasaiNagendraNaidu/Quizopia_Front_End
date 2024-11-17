@@ -1,0 +1,287 @@
+/* Student Login */
+.student-login-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .student-login-heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .student-login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .student-login-input-group {
+    margin-bottom: 15px;
+  }
+  
+  .student-login-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .student-login-input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  .student-login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .student-login-button:hover {
+    background-color: #45a049;
+  }
+  
+  .student-login-signup-text {
+    text-align: center;
+  }
+  
+  .student-login-signup-link {
+    color: blue;
+    cursor: pointer;
+  }
+  
+
+  /* Student SignUp */
+  .student-signup-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .student-signup-heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .student-signup-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .student-signup-input-group {
+    margin-bottom: 15px;
+  }
+  
+  .student-signup-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .student-signup-input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  .student-signup-checkbox-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .student-signup-checkbox {
+    margin-right: 5px;
+  }
+  
+  .student-signup-checkbox-label {
+    font-size: 14px;
+  }
+  
+  .student-signup-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .student-signup-button:hover {
+    background-color: #45a049;
+  }
+  
+
+  /* Student Home Page */
+  .studentHomapage-header {
+    grid-column: span 2;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  .studentHomapage-header h1 {
+    color: #333;
+    font-size: 2rem;
+  }
+  
+  .studentHomapage-logout-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .studentHomapage-logout-button:hover {
+    background-color: #e53935;
+  }
+  
+  .studentHomapage-container {
+    padding: 20px;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+  }
+  
+  .studentHomapage-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .studentHomapage-header h1 {
+    color: #333;
+    font-size: 2rem;
+  }
+  
+  .studentHomapage-section {
+    margin-bottom: 40px;
+  }
+  
+  .studentHomapage-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .studentHomapage-card h2 {
+    color: #4caf50;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .studentHomapage-card ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .studentHomapage-card li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .studentHomapage-card li strong {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .studentHomapage-card li p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Buttons for actions */
+  .studentHomapage-button {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  .studentHomapage-button:hover {
+    background-color: #45a049;
+  }
+  
+  .studentHomapage-upcoming-quizzes,
+  .studentHomapage-ongoing-quizzes {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .studentHomapage-scorecard {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .studentHomapage-scorecard button {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .studentHomapage-scorecard button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Scorecard Table Styling */
+  .studentHomapage-scorecard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  .studentHomapage-scorecard-table th,
+  .studentHomapage-scorecard-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .studentHomapage-scorecard-table th {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .studentHomapage-scorecard-table td {
+    background-color: #f9f9f9;
+  }
+  

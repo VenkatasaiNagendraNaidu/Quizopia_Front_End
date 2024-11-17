@@ -1,0 +1,348 @@
+/* Teacher Login */
+.teacher-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f4f6;
+    padding: 20px;
+  }
+  
+  .teacher-login-card {
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .teacher-login-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .teacher-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .teacher-login-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .teacher-login-form-label {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .teacher-login-form-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.2s ease;
+  }
+  
+  .teacher-login-form-input:focus {
+    border-color: #007bff;
+  }
+  
+  .teacher-login-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .teacher-login-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .teacher-login-signup-text {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .teacher-login-signup-link {
+    color: #007bff;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  .teacher-login-signup-link:hover {
+    color: #0056b3;
+  }
+  
+
+
+
+/* Teacher Signup */
+.teacher-signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f4f6;
+    padding: 20px;
+  }
+  
+  .teacher-signup-card {
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .teacher-signup-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .teacher-signup-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .teacher-signup-form{
+    width: 100%;
+  }
+  .teacher-signup-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .teacher-signup-form-label {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .teacher-signup-form-input {
+    width: 160px ;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.2s ease;
+  }
+  
+  .teacher-signup-form-input:focus {
+    border-color: #007bff;
+  }
+  
+  .teacher-signup-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease;
+  }
+  
+  .teacher-signup-btn:hover {
+    background-color: #0056b3;
+  }
+  
+
+  /* Teacher HomePage */
+
+  /* Container styling */
+.teacher-homepage-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  /* Header */
+  .teacher-homepage-header {
+    grid-column: span 2;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  .section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-notices .notice-card,
+  .quiz-history .quiz-card {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  .profile-info p {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  
+  .students-data-upload input[type="file"] {
+    margin-top: 10px;
+  }
+  
+  .students-data-section {
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .students-data-section ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .students-data-section li {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  .notice-section textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .notice-section button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .notice-section button:hover {
+    background-color: #45a049;
+  }
+  
+  .quiz-upload-section input[type="file"] {
+    margin-top: 10px;
+  }
+  
+  .quiz-upload-section button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .quiz-upload-section button:hover {
+    background-color: #0056b3;
+  }
+  
+.create-quiz {
+    grid-column: span 2;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .create-quiz h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .create-quiz input[type="text"],
+  .create-quiz input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .create-quiz .quiz-name input {
+    margin-bottom: 20px;
+  }
+  
+  .create-quiz .quiz-preview {
+    margin-top: 20px;
+    overflow-x: auto;
+  }
+  
+  .create-quiz table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .create-quiz th,
+  .create-quiz td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .create-quiz button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .create-quiz button:hover {
+    background-color: #45a049;
+  }
+  .logout-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .logout-button:hover {
+    background-color: #d32f2f;
+  }
+  
