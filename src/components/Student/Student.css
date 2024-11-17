@@ -28,6 +28,7 @@
   }
   
   .student-login-input {
+    max-width: 380px;
     width: 100%;
     padding: 8px;
     border-radius: 4px;

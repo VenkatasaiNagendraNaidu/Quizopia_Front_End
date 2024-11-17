@@ -1,0 +1,228 @@
+/* Admin Login */
+.adminLogin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .adminLogin-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .adminLogin-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .adminLogin-form-group {
+    margin-bottom: 20px;
+  }
+  
+  .adminLogin-form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .adminLogin-form-group input {
+    max-width: 380px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .adminLogin-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .adminLogin-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .adminLogin-signup {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .adminLogin-signup-link {
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .adminLogin-signup-link:hover {
+    text-decoration: underline;
+  }
+  
+
+  /* Admin Dashboard */
+  .adminDashboard-container {
+    padding: 30px;
+    background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .adminDashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .adminDashboard-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #007bff;
+    text-transform: uppercase;
+  }
+  
+  .logout-button {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-button:hover {
+    background-color: #e55353;
+  }
+  
+  .adminDashboard-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .adminDashboard-section h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .adminDashboard-subsection {
+    margin-bottom: 30px;
+  }
+  
+  .adminDashboard-subsection h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  .adminDashboard-subsection p {
+    font-size: 1.1rem;
+    color: #6c757d;
+  }
+  
+  .adminDashboard-section .pending-teachers,
+  .adminDashboard-section .active-teachers {
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+  }
+  
+  .pending-teachers p,
+  .active-teachers p {
+    font-size: 1.1rem;
+    color: #343a40;
+  }
+  
+  .pending-teachers {
+    background-color: #ffeeba;
+  }
+  
+  .active-teachers {
+    background-color: #d4edda;
+  }
+  
+  .adminDashboard-subsection button {
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .approve-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+  }
+  
+  .approve-button:hover {
+    background-color: #218838;
+  }
+  
+  .decline-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+  }
+  
+  .decline-button:hover {
+    background-color: #c82333;
+  }
+  
+  .adminDashboard-subsection .student-details {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .student-details h4 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  .student-details p {
+    font-size: 1.1rem;
+    color: #343a40;
+  }
+  
+  .student-details ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .student-details ul li {
+    margin: 10px 0;
+  }
+  
+  .student-details button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .student-details button:hover {
+    background-color: #0056b3;
+  }
+  
