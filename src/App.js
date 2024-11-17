@@ -1,5 +1,4 @@
 import './App.css';
-import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from './components/LandingPage';
 import TeacherLogin from './components/Teacher/TeacherLogin';
@@ -8,7 +7,6 @@ import TeacherHomePage from './components/Teacher/TeacherHomePage';
 import StudentSignUp from './components/Student/StudentSignUp';
 import StudentHomapage from './components/Student/StudentHomapage';
 import StudentLogin from './components/Student/StudentLogin';
-import LottieComponent from './components/LottieComponent';
 import AdminDashboard from './components/Admin/AdminDashboard';
 import Adminlogin from './components/Admin/Adminlogin';
 function App() {
@@ -19,7 +17,6 @@ function App() {
         <Route path="/" element={<LandingPage />}/>
         <Route path="/admin-login-for-quizopia-for-secure-access" element={<Adminlogin />}/>
         <Route path="/admin-dashboard-for-quizopia-for-secure-access" element={<AdminDashboard />}/>
-        <Route path="/lottie" element={<LottieComponent />}/>
         <Route path='/teacher-login' element={<TeacherLogin/>}/>
         <Route path='/teacher-signup' element={<TeacherSignUp/>}/>
         <Route path='/TeacherHomePage' element={<TeacherHomePage/>}/>

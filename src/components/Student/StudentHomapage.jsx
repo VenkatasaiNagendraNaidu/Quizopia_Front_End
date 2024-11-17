@@ -1,9 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Student.css'
+import axios from 'axios';
+import './Student.css';
 
 const StudentHomapage = () => {
   const navigate = useNavigate();
+
+  // State variables to hold data
+  const [notices, setNotices] = useState([]);
+  const [teacherQuizzes, setTeacherQuizzes] = useState([]);
+  const [upcomingQuizzes, setUpcomingQuizzes] = useState([]);
+  const [ongoingQuizzes, setOngoingQuizzes] = useState([]);
+  const [pastQuizzes, setPastQuizzes] = useState([]);
+
+  // Fetch data from backend when the component mounts
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [noticesRes, teacherQuizzesRes, upcomingQuizzesRes, ongoingQuizzesRes, pastQuizzesRes] = await Promise.all([
+          axios.get('http://localhost:5000/api/students/notices'),
+          axios.get('http://localhost:5000/api/students/quizzes/teacher'),
+          axios.get('http://localhost:5000/api/students/quizzes/upcoming'),
+          axios.get('http://localhost:5000/api/students/quizzes/ongoing'),
+          axios.get('http://localhost:5000/api/students/quizzes/past')
+        ]);
+
+        setNotices(noticesRes.data);
+        setTeacherQuizzes(teacherQuizzesRes.data);
+        setUpcomingQuizzes(upcomingQuizzesRes.data);
+        setOngoingQuizzes(ongoingQuizzesRes.data);
+        setPastQuizzes(pastQuizzesRes.data);
+      } catch (error) {
+        console.error('Error fetching data', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   // Handle logout functionality
   const handleLogout = () => {
@@ -24,14 +57,16 @@ const StudentHomapage = () => {
       <div className="studentHomapage-section studentHomapage-card">
         <h2>Teacher Notices</h2>
         <ul>
-          <li>
-            <strong>Notice 1:</strong>
-            <p>There will be a holiday on Monday.</p>
-          </li>
-          <li>
-            <strong>Notice 2:</strong>
-            <p>Exam schedule is out! Please check your portal.</p>
-          </li>
+          {notices.length > 0 ? (
+            notices.map((notice, index) => (
+              <li key={index}>
+                <strong>{notice.title}:</strong>
+                <p>{notice.content}</p>
+              </li>
+            ))
+          ) : (
+            <p>No notices available.</p>
+          )}
         </ul>
         <button className="studentHomapage-button">View More</button>
       </div>
@@ -40,14 +75,16 @@ const StudentHomapage = () => {
       <div className="studentHomapage-section studentHomapage-card">
         <h2>Teacher Quizzes</h2>
         <ul>
-          <li>
-            <strong>Math Quiz:</strong>
-            <p>Last attempted on 15th October, 2024.</p>
-          </li>
-          <li>
-            <strong>Science Quiz:</strong>
-            <p>Scheduled for 20th October, 2024.</p>
-          </li>
+          {teacherQuizzes.length > 0 ? (
+            teacherQuizzes.map((quiz, index) => (
+              <li key={index}>
+                <strong>{quiz.name}:</strong>
+                <p>Last attempted on {quiz.date}</p>
+              </li>
+            ))
+          ) : (
+            <p>No quizzes available.</p>
+          )}
         </ul>
         <button className="studentHomapage-button">View Details</button>
       </div>
@@ -56,10 +93,16 @@ const StudentHomapage = () => {
       <div className="studentHomapage-section studentHomapage-upcoming-quizzes studentHomapage-card">
         <h2>Upcoming Quizzes</h2>
         <ul>
-          <li>
-            <strong>Math Quiz</strong>
-            <p>Scheduled for 20th October, 2024</p>
-          </li>
+          {upcomingQuizzes.length > 0 ? (
+            upcomingQuizzes.map((quiz, index) => (
+              <li key={index}>
+                <strong>{quiz.name}</strong>
+                <p>Scheduled for {quiz.date}</p>
+              </li>
+            ))
+          ) : (
+            <p>No upcoming quizzes.</p>
+          )}
         </ul>
         <button className="studentHomapage-button">View More</button>
       </div>
@@ -68,10 +111,16 @@ const StudentHomapage = () => {
       <div className="studentHomapage-section studentHomapage-ongoing-quizzes studentHomapage-card">
         <h2>Ongoing Quizzes</h2>
         <ul>
-          <li>
-            <strong>Science Quiz</strong>
-            <p>Currently in progress.</p>
-          </li>
+          {ongoingQuizzes.length > 0 ? (
+            ongoingQuizzes.map((quiz, index) => (
+              <li key={index}>
+                <strong>{quiz.name}</strong>
+                <p>Currently in progress.</p>
+              </li>
+            ))
+          ) : (
+            <p>No ongoing quizzes.</p>
+          )}
         </ul>
         <button className="studentHomapage-button">Join Quiz</button>
       </div>
@@ -88,16 +137,17 @@ const StudentHomapage = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Math Quiz</td>
-              <td>85%</td>
-              <td>15th October, 2024</td>
-            </tr>
-            <tr>
-              <td>Science Quiz</td>
-              <td>92%</td>
-              <td>10th October, 2024</td>
-            </tr>
+            {pastQuizzes.length > 0 ? (
+              pastQuizzes.map((quiz, index) => (
+                <tr key={index}>
+                  <td>{quiz.name}</td>
+                  <td>{quiz.score}%</td>
+                  <td>{quiz.date}</td>
+                </tr>
+              ))
+            ) : (
+              <tr><td colSpan="3">No past quizzes available.</td></tr>
+            )}
           </tbody>
         </table>
         <button className="studentHomapage-button">Download Scorecard</button>

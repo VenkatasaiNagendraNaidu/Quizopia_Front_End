@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Importing useNavigate hook
+import axios from 'axios'; // Importing axios
 import './Student.css'; // Importing the stylesheet
+import {message} from 'antd'
 
 const StudentLogin = () => {
   const [studentID, setStudentID] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(''); // For error messages
   const navigate = useNavigate();
 
   // Handle redirection to signup page
@@ -12,13 +15,37 @@ const StudentLogin = () => {
     navigate('/student-signup');
   };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
+  // Handle form submission and API call
+  const handleSubmit = async (e) => {
+    console.log(studentID,password);
+    
     e.preventDefault();
-    // You can add your login logic here
-    // For now, let's just log the credentials
-    console.log('Student ID:', studentID);
-    console.log('Password:', password);
+    setError(''); // Reset any previous errors
+
+    try {
+      // Make API call to backend login endpoint
+      const response = await axios.post('http://localhost:5000/api/students/login', {
+        studentID,
+        password
+      });
+
+      // Assuming successful login returns a message and studentID
+      if (response.status === 200) {
+        message.success("Login Successful")
+        // Redirect to student home page or dashboard
+        navigate('/studentHomePage');
+      }
+    } catch (err) {
+      // Handling errors from backend
+      if (err.response) {
+        message.error('Kindly check your credentials')
+
+        setError(err.response.data.message); // Show error message from backend
+      } else {
+        message.error('An error occurred, please try again.')
+        setError('An error occurred, please try again.');
+      }
+    }
   };
 
   return (
@@ -51,7 +78,9 @@ const StudentLogin = () => {
             className="student-login-input"
           />
         </div>
-        <button type="submit" className="student-login-button" onClick={()=>{navigate('/studentHomePage')}} >Login</button>
+        {/* {error && <p className="error-message">{error}</p>} */}
+
+        <button type="submit" className="student-login-button">Login</button>
       </form>
 
       <p className="student-login-signup-text">

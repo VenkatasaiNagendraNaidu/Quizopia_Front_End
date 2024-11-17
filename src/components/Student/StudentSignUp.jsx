@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './Student.css';
-import { useNavigate } from 'react-router-dom'; // Importing useNavigate hook
-
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Import Axios
+import { message } from 'antd';
 
 const StudentSignUp = () => {
   const navigate = useNavigate();
@@ -14,11 +15,15 @@ const StudentSignUp = () => {
   const [isParentEmail, setIsParentEmail] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isParentPhone, setIsParentPhone] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you can handle the signup logic (API calls, form validation, etc.)
-    console.log({
+    setLoading(true);
+    setError(''); // Clear previous errors
+
+    const studentData = {
       name,
       classStudying,
       dob,
@@ -26,8 +31,27 @@ const StudentSignUp = () => {
       email,
       isParentEmail,
       phoneNumber,
-      isParentPhone
-    });
+      isParentPhone,
+    };
+
+    try {
+      // Make the POST request to the backend
+      const response = await axios.post('http://localhost:5000/api/students/signup', studentData);
+      
+      // Handle successful sign-up
+      console.log(response.data);
+      message.success('Student successfully registered. Check your email for login details.');
+      
+      // Redirect to the student login page
+      navigate('/student-login');
+    } catch (err) {
+      // Handle error
+      console.error(err);
+      message.error("Failed to sign up. Please try again.");
+      setError('Failed to sign up. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -134,13 +158,14 @@ const StudentSignUp = () => {
           </div>
         </div>
 
-        <button type="submit" className="student-signup-button">Sign Up</button>
+        {error && <p className="error-message">{error}</p>} {/* Show error message if any */}
+        {loading ? <p>Loading...</p> : <button type="submit" className="student-signup-button">Sign Up</button>}
       </form>
       <p className="student-login-signup-text">
         Already have an account?{' '}
         <span
           className="student-login-signup-link"
-          onClick={()=>{navigate('/student-login')}}
+          onClick={() => { navigate('/student-login') }}
         >
           Login here
         </span>
