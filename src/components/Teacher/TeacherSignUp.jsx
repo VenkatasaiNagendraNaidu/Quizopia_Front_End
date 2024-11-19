@@ -55,7 +55,7 @@ const TeacherSignup = () => {
       const response = await axios.post('http://localhost:5000/api/teachers/signup', teacherData)
 
       // If signup is successful
-      message.success('Kindly check your email for login credentials')
+      message.success('Kindly wait for admin response and check your mail for further updates')
 
       // Redirect to login page after successful signup
       navigate('/teacher-login')

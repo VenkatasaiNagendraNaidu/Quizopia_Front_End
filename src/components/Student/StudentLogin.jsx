@@ -32,6 +32,7 @@ const StudentLogin = () => {
       // Assuming successful login returns a message and studentID
       if (response.status === 200) {
         message.success("Login Successful")
+        localStorage.setItem('studentID', studentID);
         // Redirect to student home page or dashboard
         navigate('/studentHomePage');
       }

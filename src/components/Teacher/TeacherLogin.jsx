@@ -15,6 +15,8 @@ const TeacherLogin = () => {
   };
 
   const handleSubmit = async (e) => {
+    // console.log(e._id);
+    
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:5000/api/teachers/login', {
@@ -23,6 +25,7 @@ const TeacherLogin = () => {
       });
 
       if (response.status === 200) {
+        localStorage.setItem('teacherID', teacherID);
         message.success("Login Successful")
         navigate('/TeacherHomePage');
       }
